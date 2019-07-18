@@ -7,6 +7,7 @@ const useDropdown = (label, defaultState, options) => {
     <label htmlFor={id}>
       {label}
       <select
+        data-testid={id}
         id={id}
         value={state}
         onChange={e => updateState(e.target.value)}
@@ -14,6 +15,7 @@ const useDropdown = (label, defaultState, options) => {
         disabled={!options.length}
       >
         <option />
+
         {options.map(item => (
           <option key={item} value={item}>
             {item}
